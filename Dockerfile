@@ -64,7 +64,7 @@ RUN git clone https://github.com/openthread/openthread \
 && ./bootstrap \
 && ./configure \
 && make \
-&& sudo make install
+&& make install
 
 RUN git clone --depth 1 https://github.com/OpenMW/osg.git /tmp/osg \
     && cd /tmp/osg \
