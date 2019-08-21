@@ -19,7 +19,7 @@ RUN sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get update
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y curl wget apt-transport-https dirmngr
 #RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
-RUN printf "deb http://deb.debian.org/debian/ oldstable main contrib non-free\ndeb-src http://deb.debian.org/debian/ oldstable main contrib non-free\ndeb http://deb.debian.org/debian/ oldstable-updates main contrib non-free\ndeb-src http://deb.debian.org/debian/ oldstable-updates main contrib non-free\ndeb http://deb.debian.org/debian-security oldstable/updates main\ndeb-src http://deb.debian.org/debian-security oldstable/updates main\ndeb http://ftp.debian.org/debian stretch-backports main\ndeb-src http://ftp.debian.org/debian stretch-backports main" > /etc/apt/sources.list
+#RUN printf "deb http://deb.debian.org/debian/ oldstable main contrib non-free\ndeb-src http://deb.debian.org/debian/ oldstable main contrib non-free\ndeb http://deb.debian.org/debian/ oldstable-updates main contrib non-free\ndeb-src http://deb.debian.org/debian/ oldstable-updates main contrib non-free\ndeb http://deb.debian.org/debian-security oldstable/updates main\ndeb-src http://deb.debian.org/debian-security oldstable/updates main\ndeb http://ftp.debian.org/debian stretch-backports main\ndeb-src http://ftp.debian.org/debian stretch-backports main" > /etc/apt/sources.list
 
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get update
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y install apt-file
