@@ -13,6 +13,7 @@ COPY tmp/qemu-arm-static /usr/bin/qemu-arm-static
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
 RUN sed -i "s/\#//g" /etc/apt/sources.list
+RUN sed -i "/snapshot/d" /etc/apt/sources.list
 RUN sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
 
 
