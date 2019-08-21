@@ -37,5 +37,5 @@ RUN git config --global user.email "nwah@mail.com" \
 VOLUME [ "/build" ]
 WORKDIR /build
 
-ENTRYPOINT [ "/bin/bash", "/deploy/tes3mp-deploy.sh", "--script-upgrade", "--skip-pkgs", "--handle-corescripts", "--server-only" ]
-CMD [ "--install", "--make-package" ]
+ENTRYPOINT [ "/bin/bash", "/deploy/tes3mp-deploy.sh", "--script-upgrade", "--skip-pkgs", "--handle-corescripts", "--server-only", "--build-master"]
+CMD [ "--install" ]
