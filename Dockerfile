@@ -23,7 +23,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y gtk2.0
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y build-essential libgtk2.0-dev
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y libcairo2-dev libpoppler-glib-dev librsvg2-dev libgtkglextmm-x11-1.2-dev
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y libjpeg-dev libpng-dev libtiff-dev
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y dcmtk
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y dcmtk gstreamer libsdl2-dev
+
 
 RUN wget https://raw.githubusercontent.com/commontk/CTK/master/Utilities/CMake/FindDCMTK.cmake
 
@@ -56,6 +57,13 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get update \
         libboost-program-options-dev \
         libboost-system-dev \
         apt-transport-https
+
+RUN git clone https://github.com/openthread/openthread \
+&& cd openthread \
+&& ./bootstrap \
+&& ./configure \
+&& make \
+&& sudo make install
 
 RUN git clone --depth 1 https://github.com/OpenMW/osg.git /tmp/osg \
     && cd /tmp/osg \
