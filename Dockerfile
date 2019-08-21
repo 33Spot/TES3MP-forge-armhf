@@ -3,15 +3,20 @@ FROM arm64v8/debian:stretch
 LABEL maintainer="Grim Kriegor <grimkriegor@krutt.org>"
 LABEL description="A container to simplify the packaging of TES3MP for GNU/Linux (armhf version)"
 
+ENV DEBIAN_FRONTEND noninteractive
+
+
 COPY tmp/qemu-arm-static /usr/bin/qemu-arm-static
 
 #RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
+
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
 RUN sed -i "s/\#//g" /etc/apt/sources.list
 RUN sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
 
 
-RUN apt-get update \
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get update \
     && apt-get -y install \
         build-essential \
         git \
