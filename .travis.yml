@@ -5,5 +5,5 @@ language: bash
 script:
   - docker run --rm --privileged multiarch/qemu-user-static:register --reset
   - /bin/bash pre-build.sh
-  - docker build -t grimkriegor/tes3mp-forge-armhf .
+  - docker build -t 33spot/tes3mp-forge-armhf .
   
