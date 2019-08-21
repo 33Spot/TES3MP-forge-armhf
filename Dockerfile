@@ -16,6 +16,9 @@ RUN sed -i "s/\#//g" /etc/apt/sources.list
 RUN sed -i "/snapshot/d" /etc/apt/sources.list
 RUN sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
 
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get update
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get install apt-file
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get update
 
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get update \
     && apt-get -y install \
