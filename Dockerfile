@@ -8,6 +8,7 @@ COPY tmp/qemu-arm-static /usr/bin/qemu-arm-static
 #RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
 
 RUN sed -i "s/\#//g" /etc/apt/sources.list
+RUN sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
 
 
 RUN apt-get update \
