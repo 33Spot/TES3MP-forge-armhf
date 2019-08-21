@@ -5,6 +5,7 @@ LABEL description="A container to simplify the packaging of TES3MP for GNU/Linux
 
 COPY tmp/qemu-arm-static /usr/bin/qemu-arm-static
 
+RUN apt-get install apt-transport-https
 RUN apt-get update \
     && apt-get -y install \
         build-essential \
