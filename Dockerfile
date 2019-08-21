@@ -24,7 +24,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y build-essential 
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y libcairo2-dev libpoppler-glib-dev librsvg2-dev libgtkglextmm-x11-1.2-dev
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y libjpeg-dev libpng-dev libtiff-dev
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y dcmtk libsdl2-dev
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y build-dep libopenscenegraph-dev
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y libopenscenegraph-dev
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y gstreamer\*
 
 
