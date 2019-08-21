@@ -24,7 +24,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y libcairo2-dev li
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y libjpeg-dev libpng-dev libtiff-dev
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y dcmtk libsdl2-dev
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y libopenscenegraph-dev
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y gstreamer\*
+#RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y gstreamer*
 
 
 #RUN wget https://raw.githubusercontent.com/commontk/CTK/master/Utilities/CMake/FindDCMTK.cmake
