@@ -1,4 +1,5 @@
-FROM arm64v8/debian:stretch
+#FROM arm64v8/debian:stretch
+FROM arm64v8/debian:buster
 
 LABEL maintainer="Grim Kriegor <grimkriegor@krutt.org>"
 LABEL description="A container to simplify the packaging of TES3MP for GNU/Linux (armhf version)"
