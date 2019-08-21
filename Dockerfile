@@ -23,7 +23,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y gtk2.0
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y build-essential libgtk2.0-dev
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y libcairo2-dev libpoppler-glib-dev librsvg2-dev libgtkglextmm-x11-1.2-dev
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y libjpeg-dev libpng-dev libtiff-dev
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y dcmtk gstreamer libsdl2-dev
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y dcmtk libsdl2-dev
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y build-dep libopenscenegraph-dev
+RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y gstreamer*
 
 
 #RUN wget https://raw.githubusercontent.com/commontk/CTK/master/Utilities/CMake/FindDCMTK.cmake
@@ -79,5 +81,5 @@ RUN git config --global user.email "nwah@mail.com" \
 VOLUME [ "/build" ]
 WORKDIR /build
 
-ENTRYPOINT [ "/bin/bash", "/deploy/tes3mp-deploy.sh", "--script-upgrade", "--skip-pkgs", "--handle-corescripts", "--server-only", "--build-master"]
+ENTRYPOINT [ "PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/aarch64-linux-gnu/lib:/usr/local/lib /usr/local/lib64 ", "/bin/bash", "/deploy/tes3mp-deploy.sh", "--script-upgrade", "--skip-pkgs", "--handle-corescripts", "--server-only", "--build-master"]
 CMD [ "--install" ]
