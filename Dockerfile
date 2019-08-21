@@ -1,4 +1,3 @@
-#FROM arm64v8/debian:stretch
 FROM arm64v8/debian:buster
 
 LABEL maintainer="Grim Kriegor <grimkriegor@krutt.org>"
