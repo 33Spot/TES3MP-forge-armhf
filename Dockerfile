@@ -26,7 +26,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y libjpeg-dev libp
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y dcmtk gstreamer libsdl2-dev
 
 
-RUN wget https://raw.githubusercontent.com/commontk/CTK/master/Utilities/CMake/FindDCMTK.cmake
+#RUN wget https://raw.githubusercontent.com/commontk/CTK/master/Utilities/CMake/FindDCMTK.cmake
 
 
 #RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
