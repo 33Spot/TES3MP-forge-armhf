@@ -7,7 +7,7 @@ COPY tmp/qemu-arm-static /usr/bin/qemu-arm-static
 
 RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
 
-RUN apt-get install apt-transport-https
+
 RUN apt-get update \
     && apt-get -y install \
         build-essential \
@@ -24,7 +24,8 @@ RUN apt-get update \
         libboost-filesystem-dev \
         libboost-thread-dev \
         libboost-program-options-dev \
-        libboost-system-dev
+        libboost-system-dev \
+        apt-transport-https
 
 RUN git clone --depth 1 https://github.com/OpenMW/osg.git /tmp/osg \
     && cd /tmp/osg \
