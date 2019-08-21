@@ -21,7 +21,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y curl wget apt-tr
 #RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
 RUN cp /etc/apt/sources.list /etc/apt/sources.list_bk
 #RUN printf "deb http://deb.debian.org/debian/ oldstable main contrib non-free\ndeb-src http://deb.debian.org/debian/ oldstable main contrib non-free\ndeb http://deb.debian.org/debian/ oldstable-updates main contrib non-free\ndeb-src http://deb.debian.org/debian/ oldstable-updates main contrib non-free\ndeb http://deb.debian.org/debian-security oldstable/updates main\ndeb-src http://deb.debian.org/debian-security oldstable/updates main\ndeb http://ftp.debian.org/debian stretch-backports main\ndeb-src http://ftp.debian.org/debian stretch-backports main" > /etc/apt/sources.list
-RUN printf "deb http://packages.debian.org stretch main oldstable" > /etc/apt/sources.list
+#RUN printf "deb http://packages.debian.org stretch main oldstable" > /etc/apt/sources.list
 
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get update
 RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y install apt-file
