@@ -71,11 +71,11 @@ RUN apt-get update \
 #&& make \
 #&& make install
 
-RUN git clone --depth 1 https://github.com/OpenMW/osg.git /tmp/osg \
-    && cd /tmp/osg \
-    && cmake . \
-    && cp -a /tmp/osg/include/* /usr/include/ \
-    && rm -rf /tmp/osg
+#RUN git clone --depth 1 https://github.com/OpenMW/osg.git /tmp/osg \
+#    && cd /tmp/osg \
+#    && cmake . \
+#    && cp -a /tmp/osg/include/* /usr/include/ \
+#    && rm -rf /tmp/osg
 
 RUN git config --global user.email "nwah@mail.com" \
     && git config --global user.name "N'Wah" \
