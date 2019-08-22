@@ -86,9 +86,9 @@ RUN apt-get update \
 #    && rm -rf /tmp/osg
 
 #RUN cd /usr/include/aarch64-linux-gnu/sys && ln -s uio.h io.h
-RUN rm -f /usr/include/aarch64-linux-gnu/sys/io.h
+#RUN rm -f /usr/include/aarch64-linux-gnu/sys/io.h
 #RUN cd /usr/include/aarch64-linux-gnu/sys && ln -s /usr/local/musl/sys/io.h
-RUN apt-get install musl-dev doxygen
+RUN apt-get install -y musl-dev doxygen
 
 
 RUN cd ~
