@@ -16,18 +16,18 @@ RUN sed -i "s/\#//g" /etc/apt/sources.list
 RUN sed -i "/snapshot/d" /etc/apt/sources.list
 RUN sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
 
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get update
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y curl wget apt-transport-https dirmngr wget
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y gtk2.0
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y build-essential libgtk2.0-dev
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y libcairo2-dev libpoppler-glib-dev librsvg2-dev libgtkglextmm-x11-1.2-dev
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y libjpeg-dev libpng-dev libtiff-dev
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y dcmtk libsdl2-dev
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y libopenscenegraph-dev
-#RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y gstreamer*
+RUN apt-get update
+RUN apt-get install -y curl wget apt-transport-https dirmngr wget
+RUN apt-get install -y gtk2.0
+RUN apt-get install -y build-essential libgtk2.0-dev
+RUN apt-get install -y libcairo2-dev libpoppler-glib-dev librsvg2-dev libgtkglextmm-x11-1.2-dev
+RUN apt-get install -y libjpeg-dev libpng-dev libtiff-dev
+RUN apt-get install -y dcmtk libsdl2-dev
+RUN apt-get install -y libopenscenegraph-dev
+#RUN apt-get install -y gstreamer*
 
 
-#RUN wget https://raw.githubusercontent.com/commontk/CTK/master/Utilities/CMake/FindDCMTK.cmake
+RUN wget https://raw.githubusercontent.com/commontk/CTK/master/Utilities/CMake/FindDCMTK.cmake
 
 
 #RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
@@ -36,11 +36,11 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get install -y libopenscenegrap
 #RUN printf "deb http://packages.debian.org stretch main oldstable" > /etc/apt/sources.list
 #RUN printf "deb http://deb.debian.org/debian stretch main\ndeb-src http://deb.debian.org/debian stretch main\n\ndeb http://deb.debian.org/debian-security/ stretch/updates main\ndeb-src http://deb.debian.org/debian-security/ stretch/updates main\n\ndeb http://deb.debian.org/debian stretch-updates main\ndeb-src http://deb.debian.org/debian stretch-updates main\n" > /etc/apt/sources.list
 
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get update
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get -y install apt-file
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get update
+RUN apt-get update
+RUN apt-get -y install apt-file
+RUN apt-get update
 
-RUN export DEBIAN_FRONTEND=noninteractive && apt-get update \
+RUN apt-get update \
     && apt-get -y install \
         build-essential \
         git \
