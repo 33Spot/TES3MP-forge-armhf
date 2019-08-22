@@ -91,7 +91,7 @@ RUN apt-get update \
 RUN apt-get install -y musl-dev doxygen
 
 #RUN 
-
+RUN printf "deb http://ftp.pl.debian.org/debian/ stable main\deb-src http://ftp.pl.debian.org/debian/ stable main" >> /etc/apt/sources.list
 RUN apt-get build-dep libopenscenegraph-dev
 
 RUN apt-get install -y apt-utils
