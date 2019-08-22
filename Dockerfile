@@ -98,8 +98,8 @@ RUN printf "deb http://deb.debian.org/debian buster main contrib non-free\ndeb-s
 
 RUN apt-get install -y apt-utils
 
-RUN cd ~ && git clone https://github.com/scrawl/osg.git
-RUN cd osg && mkdir build && cd build
+RUN cd ~ && git clone https://github.com/scrawl/osg.git /tmp/osg
+RUN cd /tmp/osg && mkdir build && cd build
 RUN cmake -DBUILD_OSG_PLUGINS_BY_DEFAULT=0 -DBUILD_OSG_PLUGIN_OSG=1 -DBUILD_OSG_PLUGIN_DDS=1 -DBUILD_OSG_PLUGIN_TGA=1 -DBUILD_OSG_PLUGIN_BMP=1 -DBUILD_OSG_PLUGIN_JPEG=1 -DBUILD_OSG_PLUGIN_PNG=1 -DBUILD_OSG_DEPRECATED_SERIALIZERS=0 -DCMAKE_INSTALL_PREFIX=/usr/local ..
 RUN make && make install
 
