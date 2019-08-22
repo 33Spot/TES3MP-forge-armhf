@@ -31,6 +31,12 @@ RUN export C_INCLUDE_PATH=/usr/include/gdal
 #RUN pip install GDAL
 #RUN apt-get install -y gstreamer*
 
+RUN wget https://git.musl-libc.org/cgit/musl/snapshot/musl-1.1.23.tar.gz\
+&& tar xvf musl-1.1.23.tar.gz\
+&& cd musl-1.1.23\
+&& /bin/bash /configure\
+&& make\
+&& make install
 
 #RUN wget https://raw.githubusercontent.com/commontk/CTK/master/Utilities/CMake/FindDCMTK.cmake
 
