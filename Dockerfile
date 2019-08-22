@@ -49,6 +49,7 @@ RUN export LD_LIBRARY_PATH=/usr/local/musl:/usr/local/musl/include:/usr/local/mu
 #RUN printf "deb http://packages.debian.org stretch main oldstable" > /etc/apt/sources.list
 #RUN printf "deb http://deb.debian.org/debian stretch main\ndeb-src http://deb.debian.org/debian stretch main\n\ndeb http://deb.debian.org/debian-security/ stretch/updates main\ndeb-src http://deb.debian.org/debian-security/ stretch/updates main\n\ndeb http://deb.debian.org/debian stretch-updates main\ndeb-src http://deb.debian.org/debian stretch-updates main\n" > /etc/apt/sources.list
 
+
 RUN apt-get update
 RUN apt-get -y install apt-file
 RUN apt-get update
@@ -91,7 +92,8 @@ RUN apt-get update \
 RUN apt-get install -y musl-dev doxygen
 
 #RUN 
-RUN printf "deb http://ftp.pl.debian.org/debian/ stable main\deb-src http://ftp.pl.debian.org/debian/ stable main" >> /etc/apt/sources.list.d/sources_main.list
+#RUN printf "deb http://ftp.pl.debian.org/debian/ stable main\deb-src http://ftp.pl.debian.org/debian/ stable main" >> /etc/apt/sources.list.d/sources_main.list
+RUN printf "deb http://deb.debian.org/debian buster main contrib non-free\ndeb-src http://deb.debian.org/debian buster main contrib non-free\ndeb http://security.debian.org/debian-security buster/updates main contrib\ndeb-src http://security.debian.org/debian-security buster/updates main contrib" > /etc/apt/sources.list
 RUN apt-get build-dep libopenscenegraph-dev
 
 RUN apt-get install -y apt-utils
