@@ -77,8 +77,8 @@ RUN apt-get update \
 #    && cp -a /tmp/osg/include/* /usr/include/ \
 #    && rm -rf /tmp/osg
 
-RUN git config --global user.email "nwah@mail.com" \
-    && git config --global user.name "N'Wah" \
+RUN git config --global user.email "insygnis@mail.com" \
+    && git config --global user.name "33Spot" \
     && git clone https://github.com/GrimKriegor/TES3MP-deploy.git /deploy \
     && mkdir /build
 
