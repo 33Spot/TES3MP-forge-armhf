@@ -98,7 +98,7 @@ RUN printf "deb http://deb.debian.org/debian buster main contrib non-free\ndeb-s
 
 RUN apt-get install -y apt-utils
 
-RUN git config --global user.email "insygnis@mail.com" \
+RUN mkdir -p /deploy/osg && git config --global user.email "insygnis@mail.com" \
     && git config --global user.name "33Spot" \
 && git clone https://github.com/scrawl/osg.git /deploy/osg
 RUN cd /deploy/osg && mkdir build && cd build
