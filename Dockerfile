@@ -59,12 +59,12 @@ RUN apt-get update \
         libboost-system-dev \
         apt-transport-https
 
-RUN git clone https://github.com/openthread/openthread \
-&& cd openthread \
-&& ./bootstrap \
-&& ./configure \
-&& make \
-&& make install
+#RUN git clone https://github.com/openthread/openthread \
+#&& cd openthread \
+#&& ./bootstrap \
+#&& ./configure \
+#&& make \
+#&& make install
 
 RUN git clone --depth 1 https://github.com/OpenMW/osg.git /tmp/osg \
     && cd /tmp/osg \
