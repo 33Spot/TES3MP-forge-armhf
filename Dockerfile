@@ -79,6 +79,6 @@ RUN git config --global user.email "nwah@mail.com" \
 
 VOLUME [ "/build" ]
 WORKDIR /build
-
-ENTRYPOINT [ "/bin/bash", "PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/aarch64-linux-gnu/lib:/usr/local/lib:/usr/local/lib64", "/deploy/tes3mp-deploy.sh", "--script-upgrade", "--skip-pkgs", "--handle-corescripts", "--server-only", "--build-master"]
+#"PATH=/usr/local/bin:$PATH LD_LIBRARY_PATH=/usr/local/aarch64-linux-gnu/lib:/usr/local/lib:/usr/local/lib64", 
+ENTRYPOINT [ "/bin/bash", "/deploy/tes3mp-deploy.sh", "--script-upgrade", "--skip-pkgs", "--handle-corescripts", "--server-only", "--build-master"]
 CMD [ "--install" ]
