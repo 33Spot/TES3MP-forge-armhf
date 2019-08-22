@@ -80,11 +80,12 @@ RUN apt-get update \
 #&& make \
 #&& make install
 
-#RUN git clone --depth 1 https://github.com/OpenMW/osg.git /tmp/osg \
-#    && cd /tmp/osg \
-#    && cmake . \
-#    && cp -a /tmp/osg/include/* /usr/include/ \
-#    && rm -rf /tmp/osg
+RUN mkdir -p /tmp/osg \
+&& git clone --depth 1 https://github.com/OpenMW/osg.git /tmp/osg \
+    && cd /tmp/osg \
+    && cmake . \
+    && cp -a /tmp/osg/include/* /usr/include/ \
+    && rm -rf /tmp/osg
 
 #RUN cd /usr/include/aarch64-linux-gnu/sys && ln -s uio.h io.h
 #RUN rm -f /usr/include/aarch64-linux-gnu/sys/io.h
@@ -98,12 +99,12 @@ RUN printf "deb http://deb.debian.org/debian buster main contrib non-free\ndeb-s
 
 RUN apt-get install -y apt-utils
 
-RUN mkdir -p /deploy/osg && git config --global user.email "insygnis@mail.com" \
-    && git config --global user.name "33Spot" \
-&& git clone https://github.com/scrawl/osg.git /deploy/osg
-RUN cd /deploy/osg && mkdir build && cd build
-RUN cmake -DBUILD_OSG_PLUGINS_BY_DEFAULT=0 -DBUILD_OSG_PLUGIN_OSG=1 -DBUILD_OSG_PLUGIN_DDS=1 -DBUILD_OSG_PLUGIN_TGA=1 -DBUILD_OSG_PLUGIN_BMP=1 -DBUILD_OSG_PLUGIN_JPEG=1 -DBUILD_OSG_PLUGIN_PNG=1 -DBUILD_OSG_DEPRECATED_SERIALIZERS=0 -DCMAKE_INSTALL_PREFIX=/usr/local ..
-RUN make && make install
+#RUN mkdir -p /deploy/osg && git config --global user.email "insygnis@mail.com" \
+#    && git config --global user.name "33Spot" \
+#&& git clone https://github.com/scrawl/osg.git /deploy/osg
+#RUN cd /deploy/osg && mkdir build && cd build
+#RUN cmake -DBUILD_OSG_PLUGINS_BY_DEFAULT=0 -DBUILD_OSG_PLUGIN_OSG=1 -DBUILD_OSG_PLUGIN_DDS=1 -DBUILD_OSG_PLUGIN_TGA=1 -DBUILD_OSG_PLUGIN_BMP=1 -DBUILD_OSG_PLUGIN_JPEG=1 -DBUILD_OSG_PLUGIN_PNG=1 -DBUILD_OSG_DEPRECATED_SERIALIZERS=0 -DCMAKE_INSTALL_PREFIX=/usr/local ..
+#RUN make && make install
 
 #sudo make install_ld_conf
 
