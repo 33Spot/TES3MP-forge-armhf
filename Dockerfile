@@ -28,7 +28,7 @@ RUN apt-get install -y libopenscenegraph-dev
 RUN apt-get install -y  libxml2 libgdal-dev libgles2-mesa-dev libfreetype6-dev libjpeg-dev fltk1.3-dev libgstreamer-plugins-base1.0-dev libgdal-dev libsdl2-dev libsdl1.2-dev libwxgtk3.0-dev libtiff-dev
 RUN export CPLUS_INCLUDE_PATH=/usr/include/gdal
 RUN export C_INCLUDE_PATH=/usr/include/gdal
-RUN pip install GDAL
+#RUN pip install GDAL
 #RUN apt-get install -y gstreamer*
 
 
