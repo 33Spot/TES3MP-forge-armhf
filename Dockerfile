@@ -37,6 +37,8 @@ RUN wget https://git.musl-libc.org/cgit/musl/snapshot/musl-1.1.23.tar.gz\
 && ./configure\
 && make\
 && make install
+RUN export PATH=/usr/local/musl:/usr/local/musl/include:/usr/local/musl/lib:$PATH
+RUN export LD_LIBRARY_PATH=/usr/local/musl:/usr/local/musl/include:/usr/local/musl/lib:$LD_LIBRARY_PATH
 
 #RUN wget https://raw.githubusercontent.com/commontk/CTK/master/Utilities/CMake/FindDCMTK.cmake
 
