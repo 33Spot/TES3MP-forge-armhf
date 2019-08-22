@@ -94,7 +94,7 @@ RUN apt-get install -y musl-dev doxygen
 #RUN 
 #RUN printf "deb http://ftp.pl.debian.org/debian/ stable main\deb-src http://ftp.pl.debian.org/debian/ stable main" >> /etc/apt/sources.list.d/sources_main.list
 RUN printf "deb http://deb.debian.org/debian buster main contrib non-free\ndeb-src http://deb.debian.org/debian buster main contrib non-free\ndeb http://security.debian.org/debian-security buster/updates main contrib\ndeb-src http://security.debian.org/debian-security buster/updates main contrib" > /etc/apt/sources.list
-RUN apt-get build-dep libopenscenegraph-dev
+#RUN apt-get libopenscenegraph-dev
 
 RUN apt-get install -y apt-utils
 
