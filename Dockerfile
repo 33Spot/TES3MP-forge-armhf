@@ -85,7 +85,10 @@ RUN apt-get update \
 #    && cp -a /tmp/osg/include/* /usr/include/ \
 #    && rm -rf /tmp/osg
 
-RUN cd /usr/include/aarch64-linux-gnu/sys && ln -s uio.h io.h
+#RUN cd /usr/include/aarch64-linux-gnu/sys && ln -s uio.h io.h
+RUN rm -f /usr/include/aarch64-linux-gnu/sys/io.h
+RUN cd /usr/include/aarch64-linux-gnu/sys && ln -s /usr/local/musl/sys/io.h
+
 RUN cd ~
 RUN git config --global user.email "insygnis@mail.com" \
     && git config --global user.name "33Spot" \
