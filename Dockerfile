@@ -23,7 +23,6 @@ RUN apt-get install -y build-essential libgtk2.0-dev
 RUN apt-get install -y libcairo2-dev libpoppler-glib-dev librsvg2-dev libgtkglextmm-x11-1.2-dev
 RUN apt-get install -y libjpeg-dev libpng-dev libtiff-dev
 RUN apt-get install -y dcmtk libsdl2-dev
-RUN apt-get install -y libopenscenegraph-dev
 #libjasper-dev openssl-dev
 RUN apt-get install -y  libxml2 libgdal-dev libgles2-mesa-dev libfreetype6-dev libjpeg-dev fltk1.3-dev libgstreamer-plugins-base1.0-dev libgdal-dev libsdl2-dev libsdl1.2-dev libwxgtk3.0-dev libtiff-dev
 RUN export CPLUS_INCLUDE_PATH=/usr/include/gdal
@@ -79,7 +78,8 @@ RUN apt-get update \
 #&& ./configure \
 #&& make \
 #&& make install
-
+RUN apt-get install -y libequinox-jsp-jasper-java libequinox-jsp-jasper-registry-java
+RUN apt-get install -y libopenscenegraph-3.4-dev
 RUN mkdir -p /tmp/osg \
 && git clone --depth 1 https://github.com/OpenMW/osg.git /tmp/osg \
     && cd /tmp/osg \
@@ -91,6 +91,7 @@ RUN mkdir -p /tmp/osg \
 #RUN rm -f /usr/include/aarch64-linux-gnu/sys/io.h
 #RUN cd /usr/include/aarch64-linux-gnu/sys && ln -s /usr/local/musl/sys/io.h
 RUN apt-get install -y musl-dev doxygen
+
 
 #RUN 
 #RUN printf "deb http://ftp.pl.debian.org/debian/ stable main\deb-src http://ftp.pl.debian.org/debian/ stable main" >> /etc/apt/sources.list.d/sources_main.list
